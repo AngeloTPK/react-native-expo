@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, View, Text, ScrollView } from 'react-native';
+import { Button, Image, StyleSheet, View, Text, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function App() {
+  const router = useRouter();
+
   return (
     <View style={styles.screen}>
       <ScrollView style={styles.scrollView}>
 
         <View style={styles.header}>
+
+          <Button color={"#030303a1"} title="< go back" onPress={() => router.back()} />
 
           <Image
             style={styles.tinyLogo}
@@ -14,7 +19,7 @@ export default function App() {
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
           />
-          <Text style={styles.logoText}>Logo</Text>
+          <Text style={styles.logoText}>Login </Text>
 
         </View>
 
